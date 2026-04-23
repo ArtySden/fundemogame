@@ -1,7 +1,7 @@
 body {
   font-family: Arial, sans-serif;
   text-align: center;
-  background-color: #fdf6ff;
+  background-color: #f5f0e8;
 }
 
 .game-area {
@@ -18,24 +18,24 @@ body {
   position: relative;
   width: 600px;
   height: 400px;
-  background: #ffe9f3;
-  border: 2px solid #d46aa3;
+  background: #e9d8c3;
+  border: 2px solid #8b5e3c;
   margin: 0 auto;
   overflow: hidden;
 }
 
 .game-player {
   position: absolute;
-  width: 40px;
-  height: 40px;
-  background: url("imagenes/gatito.png") no-repeat center center;
+  width: 50px;
+  height: 50px;
+  background: url("imagenes/inosuke.gif") no-repeat center center;
   background-size: contain;
 }
 
-.star {
+.tanjiro {
   position: absolute;
-  width: 25px;
-  height: 25px;
-  background: url("imagenes/estrella.png") no-repeat center center;
+  width: 40px;
+  height: 40px;
+  background: url("imagenes/tanjiro.jpg") no-repeat center center;
   background-size: contain;
 }
