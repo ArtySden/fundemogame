@@ -1,0 +1,41 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #fdf6ff;
+}
+
+.game-area {
+  margin-top: 20px;
+}
+
+#score-box {
+  width: 60px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.game-container {
+  position: relative;
+  width: 600px;
+  height: 400px;
+  background: #ffe9f3;
+  border: 2px solid #d46aa3;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.game-player {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: url("imagenes/gatito.png") no-repeat center center;
+  background-size: contain;
+}
+
+.star {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background: url("imagenes/estrella.png") no-repeat center center;
+  background-size: contain;
+}
