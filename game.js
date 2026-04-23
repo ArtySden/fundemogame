@@ -6,8 +6,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const gameWidth = gameContainer.clientWidth;
   const gameHeight = gameContainer.clientHeight;
 
-  let playerX = gameWidth / 2 - 20;
-  let playerY = gameHeight / 2 - 20;
+  let playerX = gameWidth / 2 - 25;
+  let playerY = gameHeight / 2 - 25;
 
   player.style.left = `${playerX}px`;
   player.style.top = `${playerY}px`;
@@ -15,8 +15,8 @@ document.addEventListener("DOMContentLoaded", function () {
   player.dataset.moveWidth = gameWidth;
   player.dataset.moveHeight = gameHeight;
 
-  spawnStar();
-  setInterval(spawnStar, 3000);
+  spawnTanjiro();
+  setInterval(spawnTanjiro, 3000);
 });
 
 document.addEventListener("keydown", function (event) {
@@ -34,7 +34,7 @@ document.addEventListener("keydown", function (event) {
       }
       break;
     case "ArrowDown":
-      if (playerY < moveHeight - 40) {
+      if (playerY < moveHeight - 50) {
         playerY += 10;
       }
       break;
@@ -44,7 +44,7 @@ document.addEventListener("keydown", function (event) {
       }
       break;
     case "ArrowRight":
-      if (playerX < moveWidth - 40) {
+      if (playerX < moveWidth - 50) {
         playerX += 10;
       }
       break;
@@ -55,46 +55,46 @@ document.addEventListener("keydown", function (event) {
   player.style.left = `${playerX}px`;
   player.style.top = `${playerY}px`;
 
-  collectStars();
+  collectTanjiros();
 });
 
-function spawnStar() {
-  const star = document.createElement("div");
-  star.classList.add("star");
+function spawnTanjiro() {
+  const tanjiro = document.createElement("div");
+  tanjiro.classList.add("tanjiro");
 
   const gameContainer = document.querySelector(".game-container");
   const gameWidth = gameContainer.clientWidth;
   const gameHeight = gameContainer.clientHeight;
 
-  const starX = Math.random() * (gameWidth - 25);
-  const starY = Math.random() * (gameHeight - 25);
+  const tanjiroX = Math.random() * (gameWidth - 40);
+  const tanjiroY = Math.random() * (gameHeight - 40);
 
-  star.style.left = `${starX}px`;
-  star.style.top = `${starY}px`;
+  tanjiro.style.left = `${tanjiroX}px`;
+  tanjiro.style.top = `${tanjiroY}px`;
 
-  gameContainer.appendChild(star);
+  gameContainer.appendChild(tanjiro);
 
   setTimeout(() => {
-    star.remove();
+    tanjiro.remove();
   }, 5000);
 }
 
-function collectStars() {
+function collectTanjiros() {
   const player = document.querySelector(".game-player");
-  const stars = document.querySelectorAll(".star");
+  const tanjiros = document.querySelectorAll(".tanjiro");
   const scoreBox = document.getElementById("score-box");
 
-  stars.forEach((star) => {
-    const starRect = star.getBoundingClientRect();
+  tanjiros.forEach((tanjiro) => {
+    const tanjiroRect = tanjiro.getBoundingClientRect();
     const playerRect = player.getBoundingClientRect();
 
     if (
-      playerRect.x < starRect.x + starRect.width &&
-      playerRect.x + playerRect.width > starRect.x &&
-      playerRect.y < starRect.y + starRect.height &&
-      playerRect.y + playerRect.height > starRect.y
+      playerRect.x < tanjiroRect.x + tanjiroRect.width &&
+      playerRect.x + playerRect.width > tanjiroRect.x &&
+      playerRect.y < tanjiroRect.y + tanjiroRect.height &&
+      playerRect.y + playerRect.height > tanjiroRect.y
     ) {
-      star.remove();
+      tanjiro.remove();
       score++;
       scoreBox.value = score;
     }
