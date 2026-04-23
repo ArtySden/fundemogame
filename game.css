@@ -36,6 +36,6 @@ body {
   position: absolute;
   width: 40px;
   height: 40px;
-  background: url("imagenes/tanjiro.jpg") no-repeat center center;
+  background: url("imagenes/tanjiro.png") no-repeat center center;
   background-size: contain;
 }
